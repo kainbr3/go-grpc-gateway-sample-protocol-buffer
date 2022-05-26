@@ -4,7 +4,7 @@
 // - protoc             v3.19.4
 // source: go-grpc-gateway-sample.proto
 
-package go_grpc_gateway_sample_protocol_buffer
+package proto
 
 import (
 	context "context"
@@ -42,7 +42,7 @@ func NewDeviceServiceClient(cc grpc.ClientConnInterface) DeviceServiceClient {
 
 func (c *deviceServiceClient) GetAllDevices(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Devices, error) {
 	out := new(Devices)
-	err := c.cc.Invoke(ctx, "/go_grpc_gateway_sample_protocol_buffer.DeviceService/GetAllDevices", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.DeviceService/GetAllDevices", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +51,7 @@ func (c *deviceServiceClient) GetAllDevices(ctx context.Context, in *Empty, opts
 
 func (c *deviceServiceClient) GetDeviceByID(ctx context.Context, in *ID, opts ...grpc.CallOption) (*Device, error) {
 	out := new(Device)
-	err := c.cc.Invoke(ctx, "/go_grpc_gateway_sample_protocol_buffer.DeviceService/GetDeviceByID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.DeviceService/GetDeviceByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -60,7 +60,7 @@ func (c *deviceServiceClient) GetDeviceByID(ctx context.Context, in *ID, opts ..
 
 func (c *deviceServiceClient) SwitchDevice(ctx context.Context, in *UpdateDevice, opts ...grpc.CallOption) (*Device, error) {
 	out := new(Device)
-	err := c.cc.Invoke(ctx, "/go_grpc_gateway_sample_protocol_buffer.DeviceService/SwitchDevice", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.DeviceService/SwitchDevice", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -69,7 +69,7 @@ func (c *deviceServiceClient) SwitchDevice(ctx context.Context, in *UpdateDevice
 
 func (c *deviceServiceClient) RegisterDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*Device, error) {
 	out := new(Device)
-	err := c.cc.Invoke(ctx, "/go_grpc_gateway_sample_protocol_buffer.DeviceService/RegisterDevice", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.DeviceService/RegisterDevice", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -130,7 +130,7 @@ func _DeviceService_GetAllDevices_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/go_grpc_gateway_sample_protocol_buffer.DeviceService/GetAllDevices",
+		FullMethod: "/proto.DeviceService/GetAllDevices",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DeviceServiceServer).GetAllDevices(ctx, req.(*Empty))
@@ -148,7 +148,7 @@ func _DeviceService_GetDeviceByID_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/go_grpc_gateway_sample_protocol_buffer.DeviceService/GetDeviceByID",
+		FullMethod: "/proto.DeviceService/GetDeviceByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DeviceServiceServer).GetDeviceByID(ctx, req.(*ID))
@@ -166,7 +166,7 @@ func _DeviceService_SwitchDevice_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/go_grpc_gateway_sample_protocol_buffer.DeviceService/SwitchDevice",
+		FullMethod: "/proto.DeviceService/SwitchDevice",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DeviceServiceServer).SwitchDevice(ctx, req.(*UpdateDevice))
@@ -184,7 +184,7 @@ func _DeviceService_RegisterDevice_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/go_grpc_gateway_sample_protocol_buffer.DeviceService/RegisterDevice",
+		FullMethod: "/proto.DeviceService/RegisterDevice",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DeviceServiceServer).RegisterDevice(ctx, req.(*Device))
@@ -196,7 +196,7 @@ func _DeviceService_RegisterDevice_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DeviceService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "go_grpc_gateway_sample_protocol_buffer.DeviceService",
+	ServiceName: "proto.DeviceService",
 	HandlerType: (*DeviceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
