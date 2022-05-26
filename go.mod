@@ -1,4 +1,4 @@
-module go-grpc-gateway-sample-protocol-buffer
+module github.com/kainbr3/go-grpc-gateway-sample-protocol-buffer
 
 go 1.18
 
