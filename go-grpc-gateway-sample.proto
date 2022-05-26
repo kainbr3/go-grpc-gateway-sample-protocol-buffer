@@ -1,9 +1,9 @@
 
 syntax = "proto3";
 
-package go_grpc_gateway_sample_protocol_buffer;
+package proto;
 
-option go_package = "github.com/kainbr3/go-grpc-gateway-sample-protocol-buffer";
+option go_package = "github.com/kainbr3/go-grpc-gateway-sample-protocol-buffer;proto";
 
 //import "google/api/annotations.proto";
 
